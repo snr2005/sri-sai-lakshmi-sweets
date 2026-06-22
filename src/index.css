@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Palette */
+  --color-cream:        #FDF6EC;   /* Page background */
+  --color-cream-dark:   #F5EAD5;   /* Section alternate bg */
+  --color-gold:         #C8960C;   /* Primary accent */
+  --color-gold-light:   #F0C040;   /* Highlights, hover states */
+  --color-gold-pale:    #FFF3C4;   /* Subtle fills, badges */
+  --color-brown-deep:   #3B1F0A;   /* Headings, primary text */
+  --color-brown-mid:    #6B3A1F;   /* Body text */
+  --color-brown-light:  #A0622A;   /* Muted text, borders */
+  --color-saffron:      #E8720C;   /* Accent buttons, highlights */
+  --color-saffron-pale: #FDE8D0;   /* Saffron tinted backgrounds */
+  --color-beige-card:   #FBF3E4;   /* Product card background */
+  --color-choco-footer: #1C0D02;   /* Footer background */
+  --color-white:        #FFFFFF;
+
+  /* Semantic */
+  --color-success:      #2D7A3A;
+  --color-danger:       #C0392B;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;  /* Headings — regal & traditional */
+  --font-body:    'DM Sans', system-ui, sans-serif;       /* Body — clean & modern */
+  --font-accent:  'Playfair Display', Georgia, serif;     /* Taglines, quotes */
+
+  /* Spacing */
+  --radius-sm:    6px;
+  --radius-md:    12px;
+  --radius-lg:    20px;
+  --radius-xl:    32px;
+  --shadow-card:  0 4px 24px rgba(59, 31, 10, 0.08);
+  --shadow-hover: 0 12px 40px rgba(59, 31, 10, 0.15);
+  --shadow-gold:  0 4px 20px rgba(200, 150, 12, 0.25);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-brown-mid);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2 {
+    font-family: var(--font-display);
+    color: var(--color-brown-deep);
+    font-weight: 700;
+  }
+
+  h3, h4 {
+    font-family: var(--font-accent);
+    color: var(--color-gold);
+  }
+}
+
+/* Custom Scrollbar for Premium Look */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brown-light);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-cream);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brown-mid);
+}
+
+/* Gold Shimmer Skeleton Loader */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-cream-dark) 25%,
+    var(--color-gold-pale) 50%,
+    var(--color-cream-dark) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Fancy Corner Accents */
+.gold-corners {
+  position: relative;
+}
+.gold-corners::before,
+.gold-corners::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-gold);
+}
+.gold-corners::before {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+.gold-corners::after {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Staggered load animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Vertical Marquee Animations */
+@keyframes marqueeScrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marqueeScrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-up {
+  animation: marqueeScrollUp 35s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: marqueeScrollDown 35s linear infinite;
+}
+
+.pause-on-hover:hover .animate-marquee-up,
+.pause-on-hover:hover .animate-marquee-down,
+.pause-on-hover:hover .animate-marquee-left {
+  animation-play-state: paused;
+}
+
+/* Horizontal Marquee Animations */
+@keyframes marqueeScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeScrollLeft 30s linear infinite;
+}
+
+
