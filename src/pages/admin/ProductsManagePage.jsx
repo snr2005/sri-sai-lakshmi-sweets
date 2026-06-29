@@ -34,10 +34,11 @@ export const ProductsManagePage = () => {
   };
 
   const handleToggleFeatured = async (product) => {
+    const currentFeatured = !!product.is_featured;
     try {
       await updateProduct(product.id, {
         ...product,
-        is_featured: !product.is_featured
+        is_featured: !currentFeatured
       });
       toast.success(`${product.name} featured state updated!`);
     } catch (e) {
@@ -46,10 +47,11 @@ export const ProductsManagePage = () => {
   };
 
   const handleToggleAvailable = async (product) => {
+    const currentAvailable = product.is_available !== false;
     try {
       await updateProduct(product.id, {
         ...product,
-        is_available: !product.is_available
+        is_available: !currentAvailable
       });
       toast.success(`${product.name} availability updated!`);
     } catch (e) {

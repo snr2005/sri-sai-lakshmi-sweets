@@ -30,7 +30,7 @@ export const ProductCard = ({ product }) => {
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        {!is_available && (
+        {is_available === false && (
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center">
             <span className="bg-danger text-white font-body font-bold text-xs uppercase tracking-wider px-3 py-1.5 rounded-sm">
               Unavailable Today
@@ -63,22 +63,22 @@ export const ProductCard = ({ product }) => {
         <div className="flex flex-col gap-3 mt-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5">
-              <span className={`w-2.5 h-2.5 rounded-full ${is_available ? 'bg-success' : 'bg-danger'}`}></span>
+              <span className={`w-2.5 h-2.5 rounded-full ${is_available !== false ? 'bg-success' : 'bg-danger'}`}></span>
               <span className="text-xs font-semibold text-brown-mid font-body uppercase">
-                {is_available ? 'Available' : 'Unavailable'}
+                {is_available !== false ? 'Available' : 'Unavailable'}
               </span>
             </div>
             <span className="text-sm font-accent italic text-gold font-bold">
               Contact for Price
             </span>
           </div>
-
+ 
           <a
-            href={is_available ? getProductInquiryLink(name) : '#'}
+            href={is_available !== false ? getProductInquiryLink(name) : '#'}
             target="_blank"
             rel="noopener noreferrer"
             className={`w-full py-3 px-4 font-body font-bold uppercase tracking-wider rounded-md text-xs flex items-center justify-center gap-2 transition-all duration-300 ${
-              is_available
+              is_available !== false
                 ? 'bg-saffron text-white hover:bg-saffron/90 shadow-md hover:shadow-lg'
                 : 'bg-brown-light/40 text-brown-mid/50 cursor-not-allowed pointer-events-none'
             }`}
