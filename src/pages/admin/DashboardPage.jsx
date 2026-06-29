@@ -83,7 +83,7 @@ export const DashboardPage = () => {
               </p>
             </div>
           </div>
-          <span className="text-[10px] font-bold text-gold uppercase tracking-[0.2em] bg-white border border-gold/20 px-3.5 py-2 rounded-md shadow-sm self-stretch sm:self-auto text-center">
+          <span className="text-[10px] font-bold text-gold uppercase tracking-[0.2em] bg-white border border-gold/20 px-3.5 py-2 rounded-md shadow-sm self-stretch sm:self-auto text-center whitespace-nowrap">
             Demo Console
           </span>
         </div>

@@ -12,13 +12,11 @@ export const ProductsManagePage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  // Search filter - exclude Catering Items and Bulk Order Items since they are managed on their own page
-  const filteredProducts = products
-    .filter(p => p.category !== 'Catering Items' && p.category !== 'Bulk Order Items')
-    .filter(p =>
-      p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      p.category.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+  // Search filter - include all categories in admin view so they can be managed
+  const filteredProducts = products.filter(p =>
+    p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    p.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const handleSaveProduct = async (formData, file) => {
     try {

@@ -439,6 +439,38 @@ export const DEFAULT_PRODUCTS = [
     is_featured: false,
     is_available: true 
   },
+  { 
+    name: "Wedding Sweet Platter", 
+    category: "Catering Items", 
+    description: "Premium selection of assorted ghee sweets and dry fruit bites, beautifully arranged for wedding reception tables.", 
+    image_url: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?q=80&w=600&auto=format&fit=crop", 
+    is_featured: true,
+    is_available: true 
+  },
+  { 
+    name: "Live Jalebi Counter", 
+    category: "Catering Items", 
+    description: "Live counter service serving hot, crispy jalebis made with pure ghee at your event venue.", 
+    image_url: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=600&auto=format&fit=crop", 
+    is_featured: true,
+    is_available: true 
+  },
+  { 
+    name: "Premium Festival Gift Box", 
+    category: "Bulk Order Items", 
+    description: "Assorted sweets and savories packed in premium customized boxes, perfect for corporate and festival gifting.", 
+    image_url: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=600&auto=format&fit=crop", 
+    is_featured: true,
+    is_available: true 
+  },
+  { 
+    name: "Bulk Sweets Box (5kg)", 
+    category: "Bulk Order Items", 
+    description: "Standard bulk packaging of traditional sweets for distribution during family gatherings and events.", 
+    image_url: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600&auto=format&fit=crop", 
+    is_featured: true,
+    is_available: true 
+  }
 ];
 
 

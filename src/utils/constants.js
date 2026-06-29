@@ -3,7 +3,9 @@ export const CATEGORIES = [
   "Ghee Sweets",
   "Hot Items",
   "Cakes & Bakery",
-  "Festival Specials"
+  "Festival Specials",
+  "Catering Items",
+  "Bulk Order Items"
 ];
 
 export const GALLERY_CATEGORIES = [
